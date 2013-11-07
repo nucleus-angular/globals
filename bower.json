@@ -1,0 +1,9 @@
+{
+  "name": "nucleus-angular-globals",
+  "version": "0.3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "unstable-angular-complete": "1.2.0rc3",
+    "lodash": "1.2.1"
+  }
+}

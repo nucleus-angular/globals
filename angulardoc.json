@@ -1,0 +1,19 @@
+{
+  "name": "Nucleus Angular Globals",
+  "description": "Nucleus Angular Globals",
+  "version": "0.3.0",
+  "options": {
+    "outdir": "./docs",
+    "jsonDir": "json",
+    "webDir": "web",
+    "paths": [
+      "."
+    ],
+    "ignorePaths": [
+      "docs",
+      "components",
+      "karma",
+      "tests"
+    ]
+  }
+}
