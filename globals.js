@@ -1,11 +1,11 @@
 /**
  * This module contains global application data that needs to be available everywhere
  *
- * @module nag
- * @ngservice globals
+ * @module nag.globals
+ * @ngservice nagGlobals
  */
 angular.module('nag.globals', [])
-.provider('globals', [
+.provider('nagGlobals', [
   function() {
     var data = {};
     var globals = {};
@@ -43,7 +43,10 @@ angular.module('nag.globals', [])
         return globals;
       },
       addConstant: addConstant,
-      addValue: addValue
+      addValue: addValue,
+      getData: function(key) {
+        return globals[key];
+      }
     };
   }
 ]);
