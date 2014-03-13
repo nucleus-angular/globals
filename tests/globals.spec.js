@@ -6,7 +6,7 @@ describe('Globals', function(){
   }));
 
   it('should return undefined when trying to access a property that has not been added', inject(function(nagGlobals) {
-    expect(nagGlobals.value).toBe(undefined);
+    expect(nagGlobals.value).to.be.undefined;
   }));
 
   it('should be able add and get values', inject(function(nagGlobals) {
@@ -14,7 +14,7 @@ describe('Globals', function(){
       initialValue: 123
     });
 
-    expect(nagGlobals.value).toBe(123);
+    expect(nagGlobals.value).to.equal(123);
   }));
 
   it('should be able to modify value values', inject(function(nagGlobals) {
@@ -23,7 +23,7 @@ describe('Globals', function(){
     });
     nagGlobals.value = 'test';
 
-    expect(nagGlobals.value).toBe('test');
+    expect(nagGlobals.value).to.equal('test');
   }));
 
   it('should return default value if one is not set', inject(function(nagGlobals) {
@@ -31,7 +31,7 @@ describe('Globals', function(){
       defaultValue: 123
     });
 
-    expect(nagGlobals.value).toBe(123);
+    expect(nagGlobals.value).to.equal(123);
   }));
 
   it('should be able to store multi-level objects', inject(function(nagGlobals) {
@@ -43,8 +43,8 @@ describe('Globals', function(){
       username: 'testuser'
     }
 
-    expect(nagGlobals.session.user.id).toBe(123);
-    expect(nagGlobals.session.user.username).toBe('testuser');
+    expect(nagGlobals.session.user.id).to.equal(123);
+    expect(nagGlobals.session.user.username).to.equal('testuser');
   }));
 
   it('should be able to set a setter validation function', inject(function(nagGlobals) {
@@ -56,13 +56,13 @@ describe('Globals', function(){
     });
     nagGlobals.value = 123;
 
-    expect(nagGlobals.value).toBe(false);
+    expect(nagGlobals.value).to.be.false;
   }));
 
   it('should be able add and get constants', inject(function(nagGlobals) {
     provider.addConstant('CONSTANT', 234);
 
-    expect(nagGlobals.CONSTANT).toBe(234);
+    expect(nagGlobals.CONSTANT).to.equal(234);
   }));
 
   it('should not be able to modify constant values', inject(function(nagGlobals) {
@@ -70,7 +70,7 @@ describe('Globals', function(){
 
     expect(function() {
       nagGlobals.CONSTANT = 'test';
-    }).toThrow(new Error("setting a property that has only a getter"));
+    }).to.throw('setting a property that has only a getter');
   }));
 
   it('should be able to get value data from provider', inject(function() {
@@ -78,12 +78,12 @@ describe('Globals', function(){
       initialValue: 123
     });
 
-    expect(provider.getData('value')).toBe(123);
+    expect(provider.getData('value')).to.equal(123);
   }));
 
   it('should be able to get constants data from provider', inject(function() {
     provider.addConstant('CONSTANT', 234);
 
-    expect(provider.getData('CONSTANT')).toBe(234);
+    expect(provider.getData('CONSTANT')).to.equal(234);
   }));
 });
