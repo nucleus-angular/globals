@@ -4,7 +4,7 @@
  * @module nag.globals
  * @ngservice nagGlobals
  */
-angular.module('nag.globals', [])
+angular.module('nag.globals')
 .provider('nagGlobals', [
   function() {
     var data = {};

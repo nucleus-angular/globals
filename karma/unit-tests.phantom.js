@@ -9,7 +9,8 @@ module.exports = function(config) {
       'components/lodash/dist/lodash.js',
       'components/angular/angular.js',
       'components/angular-mocks/angular-mocks.js',
-      '*.js',
+      'module.js',
+      'globals-provider.js',
       'tests/*.js'
     ]
   });
